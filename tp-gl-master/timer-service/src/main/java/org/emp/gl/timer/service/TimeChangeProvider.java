@@ -6,12 +6,22 @@
 package org.emp.gl.timer.service;
 
 /**
+ * Interface pour les fournisseurs de notifications de changement de temps
+ * Pattern Observer: permet aux objets de s'abonner aux notifications
  *
  * @author tina
  */
 public interface TimeChangeProvider {
 
+    /**
+     * Ajouter un listener pour être notifié des changements
+     * @param pl le listener à ajouter
+     */
     public void addTimeChangeListener(TimerChangeListener pl);
 
+    /**
+     * Retirer un listener
+     * @param pl le listener à retirer
+     */
     public void removeTimeChangeListener(TimerChangeListener pl);
 }
