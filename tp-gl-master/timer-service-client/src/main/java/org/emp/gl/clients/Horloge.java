@@ -1,14 +1,15 @@
 package org.emp.gl.clients;
 
+import org.emp.gl.lookup.Lookup;
 import org.emp.gl.timer.service.TimerChangeListener;
 import org.emp.gl.timer.service.TimerService;
 
 import java.beans.PropertyChangeEvent;
 
 /**
- * Classe Horloge qui affiche l'heure en temps réel.
- * Implémente TimerChangeListener pour être notifiée des changements
- * du TimerService via PropertyChangeSupport.
+ * Classe Horloge modifiée pour le TP2.
+ * Utilise l'annuaire Lookup pour récupérer le TimerService
+ * au lieu de l'injection par constructeur.
  *
  * @author Amine
  */
@@ -19,16 +20,28 @@ public class Horloge implements TimerChangeListener {
 
     /**
      * Constructeur de l'horloge.
+     * Récupère automatiquement le TimerService depuis le Lookup.
      *
      * @param name le nom de l'horloge
      */
     public Horloge(String name) {
         this.name = name;
-        System.out.println("Horloge " + name + " initialized!");
+
+        // ✅ Récupération du service via l'annuaire Lookup
+        Lookup lookup = Lookup.getInstance();
+        this.timerService = lookup.getService(TimerService.class);
+
+        if (timerService != null) {
+            // S'inscrire comme observateur
+            timerService.addTimeChangeListener(this);
+            System.out.println("🕐 Horloge '" + name + "' créée et connectée au TimerService");
+        } else {
+            System.err.println("⚠️  Horloge '" + name + "' : TimerService non disponible dans le Lookup!");
+        }
     }
 
     /**
-     * Définit le service de temps et s'inscrit comme listener.
+     * Définit manuellement le service de temps (optionnel, pour compatibilité).
      *
      * @param service le service de temps
      */
@@ -91,5 +104,15 @@ public class Horloge implements TimerChangeListener {
      */
     public String getName() {
         return name;
+    }
+
+    /**
+     * Nettoie les ressources (se désinscrit du service).
+     */
+    public void dispose() {
+        if (timerService != null) {
+            timerService.removeTimeChangeListener(this);
+            System.out.println("🗑️  Horloge '" + name + "' désinscrite");
+        }
     }
 }

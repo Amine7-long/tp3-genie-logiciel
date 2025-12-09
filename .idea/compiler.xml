@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="lookup-module" />
         <module name="time-service-impl" />
         <module name="timer-service" />
         <module name="timer-service-client" />
