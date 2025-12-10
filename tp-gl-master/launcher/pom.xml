@@ -31,7 +31,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- ✅ Dépendance vers le module lookup -->
+        <!-- Dépendance vers le module lookup -->
         <dependency>
             <groupId>org.emp.gl</groupId>
             <artifactId>lookup-module</artifactId>
@@ -59,10 +59,35 @@
             <version>0.0.1</version>
             <type>jar</type>
         </dependency>
+
+
+
+        <!-- ✅ Dépendance vers watch-gui pour TP3 -->
+
+
+
+
+        <dependency>
+            <groupId>org.emp.gl</groupId>
+            <artifactId>watch-gui</artifactId>
+            <version>0.0.1</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
+            <!-- Plugin exec pour exécuter avec mvn exec:java -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>org.emp.gl.core.launcher.App</mainClass>
+                </configuration>
+            </plugin>
+
+            <!-- Plugin assembly pour créer un JAR exécutable -->
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <executions>

@@ -7,16 +7,23 @@ import org.emp.gl.timer.service.TimerService;
 import java.beans.PropertyChangeEvent;
 
 /**
- * Classe Horloge modifiée pour le TP2.
- * Utilise l'annuaire Lookup pour récupérer le TimerService
- * au lieu de l'injection par constructeur.
+ * Classe Horloge mise à jour pour le TP3.
+ * Permet le réglage manuel de l'heure.
  *
- * @author Amine
+ * @author Amine - TP2/TP3
  */
 public class Horloge implements TimerChangeListener {
 
     private final String name;
     private TimerService timerService;
+
+    // Valeurs de temps internes (pour le mode réglage)
+    private int seconds;
+    private int minutes;
+    private int hours;
+
+    // Mode de synchronisation
+    private boolean syncWithService = true;
 
     /**
      * Constructeur de l'horloge.
@@ -32,29 +39,31 @@ public class Horloge implements TimerChangeListener {
         this.timerService = lookup.getService(TimerService.class);
 
         if (timerService != null) {
+            // Initialiser avec l'heure du service
+            seconds = timerService.getSecondes();
+            minutes = timerService.getMinutes();
+            hours = timerService.getHeures();
+
             // S'inscrire comme observateur
             timerService.addTimeChangeListener(this);
-            System.out.println("🕐 Horloge '" + name + "' créée et connectée au TimerService");
+            System.out.println("🕐 Horloge '" + name + "' créée et connectée");
         } else {
-            System.err.println("⚠️  Horloge '" + name + "' : TimerService non disponible dans le Lookup!");
+            System.err.println("⚠️  Horloge '" + name + "' : TimerService non disponible!");
         }
     }
 
     /**
-     * Définit manuellement le service de temps (optionnel, pour compatibilité).
+     * Définit manuellement le service de temps.
      *
      * @param service le service de temps
      */
     public void setTimerService(TimerService service) {
-        // Se désinscrire de l'ancien service si existant
         if (this.timerService != null) {
             this.timerService.removeTimeChangeListener(this);
         }
 
-        // Affecter le nouveau service
         this.timerService = service;
 
-        // S'inscrire au nouveau service
         if (service != null) {
             service.addTimeChangeListener(this);
         }
@@ -66,48 +75,104 @@ public class Horloge implements TimerChangeListener {
     public void afficherHeure() {
         if (timerService != null) {
             System.out.println(name + " affiche " +
-                    formatNumber(timerService.getHeures()) + ":" +
-                    formatNumber(timerService.getMinutes()) + ":" +
-                    formatNumber(timerService.getSecondes()));
+                    formatNumber(hours) + ":" +
+                    formatNumber(minutes) + ":" +
+                    formatNumber(seconds));
         } else {
             System.out.println(name + " : Service de temps non disponible");
         }
     }
 
     /**
-     * Formate un nombre sur 2 chiffres (ajoute un 0 devant si < 10).
-     *
-     * @param number le nombre à formater
-     * @return le nombre formaté (ex: 9 → "09", 15 → "15")
+     * Formate un nombre sur 2 chiffres.
      */
     private String formatNumber(int number) {
         return (number < 10 ? "0" : "") + number;
     }
 
     /**
-     * Méthode appelée par le TimerService lorsqu'une propriété change.
-     * Affiche l'heure uniquement quand la seconde change.
-     *
-     * @param evt événement contenant le nom de la propriété et les valeurs
+     * Réagit aux changements du service de temps.
+     * Met à jour les valeurs internes si en mode synchro.
      */
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        if (TimerChangeListener.SECONDE_PROP.equals(evt.getPropertyName())) {
-            afficherHeure();
+        if (!syncWithService) return;
+
+        String prop = evt.getPropertyName();
+
+        if (TimerChangeListener.SECONDE_PROP.equals(prop)) {
+            seconds = (int) evt.getNewValue();
+        } else if (TimerChangeListener.MINUTE_PROP.equals(prop)) {
+            minutes = (int) evt.getNewValue();
+        } else if (TimerChangeListener.HEURE_PROP.equals(prop)) {
+            hours = (int) evt.getNewValue();
+        }
+    }
+
+    // === MÉTHODES DE RÉGLAGE MANUEL (TP3) ===
+
+    /**
+     * Incrémente les secondes.
+     */
+    public void incrementSeconds() {
+        syncWithService = false;
+        seconds = (seconds + 1) % 60;
+        if (seconds == 0) {
+            incrementMinutes();
         }
     }
 
     /**
-     * Obtient le nom de l'horloge.
-     *
-     * @return le nom de cette horloge
+     * Incrémente les minutes.
      */
+    public void incrementMinutes() {
+        syncWithService = false;
+        minutes = (minutes + 1) % 60;
+        if (minutes == 0) {
+            incrementHours();
+        }
+    }
+
+    /**
+     * Incrémente les heures.
+     */
+    public void incrementHours() {
+        syncWithService = false;
+        hours = (hours + 1) % 24;
+    }
+
+    /**
+     * Réactive la synchronisation avec le service.
+     */
+    public void enableSync() {
+        syncWithService = true;
+        if (timerService != null) {
+            seconds = timerService.getSecondes();
+            minutes = timerService.getMinutes();
+            hours = timerService.getHeures();
+        }
+    }
+
+    // === GETTERS ===
+
     public String getName() {
         return name;
     }
 
+    public int getHours() {
+        return hours;
+    }
+
+    public int getMinutes() {
+        return minutes;
+    }
+
+    public int getSeconds() {
+        return seconds;
+    }
+
     /**
-     * Nettoie les ressources (se désinscrit du service).
+     * Nettoie les ressources.
      */
     public void dispose() {
         if (timerService != null) {

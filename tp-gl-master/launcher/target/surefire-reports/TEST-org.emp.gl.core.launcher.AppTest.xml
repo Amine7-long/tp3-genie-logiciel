@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.emp.gl.core.launcher.AppTest" time="0.094" tests="8" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.emp.gl.core.launcher.AppTest" time="0.139" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="F:\tp1-Amine7-long\tp-gl-master\launcher\target\test-classes;F:\tp1-Amine7-long\tp-gl-master\launcher\target\classes;C:\Users\AMINE DADI\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\AMINE DADI\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;F:\tp1-Amine7-long\tp-gl-master\lookup-module\target\lookup-module-0.0.1.jar;F:\tp1-Amine7-long\tp-gl-master\timer-service\target\timer-service-0.0.1.jar;F:\tp1-Amine7-long\tp-gl-master\time-service-impl\target\time-service-impl-0.0.1.jar;F:\tp1-Amine7-long\tp-gl-master\timer-service-client\target\timer-service-client-0.0.1.jar;"/>
+    <property name="java.class.path" value="F:\tp1-Amine7-long\tp-gl-master\launcher\target\test-classes;F:\tp1-Amine7-long\tp-gl-master\launcher\target\classes;C:\Users\AMINE DADI\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\AMINE DADI\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;F:\tp1-Amine7-long\tp-gl-master\lookup-module\target\lookup-module-0.0.1.jar;F:\tp1-Amine7-long\tp-gl-master\timer-service\target\timer-service-0.0.1.jar;F:\tp1-Amine7-long\tp-gl-master\time-service-impl\target\time-service-impl-0.0.1.jar;F:\tp1-Amine7-long\tp-gl-master\timer-service-client\target\timer-service-client-0.0.1.jar;F:\tp1-Amine7-long\tp-gl-master\watch-gui\target\watch-gui-0.0.1.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -15,9 +15,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-25\bin"/>
-    <property name="sun.java.command" value="C:\Users\AMINE DADI\AppData\Local\Temp\surefire4219564851470548148\surefirebooter-20251204150432207_3.jar C:\Users\AMINE DADI\AppData\Local\Temp\surefire4219564851470548148 2025-12-04T15-04-29_850-jvmRun1 surefire-20251204150432207_1tmp surefire_0-20251204150432207_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\AMINE DADI\AppData\Local\Temp\surefire17411114739030210034\surefirebooter-20251210235635373_3.jar C:\Users\AMINE DADI\AppData\Local\Temp\surefire17411114739030210034 2025-12-10T23-56-30_306-jvmRun1 surefire-20251210235635373_1tmp surefire_0-20251210235635373_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="F:\tp1-Amine7-long\tp-gl-master\launcher\target\test-classes;F:\tp1-Amine7-long\tp-gl-master\launcher\target\classes;C:\Users\AMINE DADI\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\AMINE DADI\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;F:\tp1-Amine7-long\tp-gl-master\lookup-module\target\lookup-module-0.0.1.jar;F:\tp1-Amine7-long\tp-gl-master\timer-service\target\timer-service-0.0.1.jar;F:\tp1-Amine7-long\tp-gl-master\time-service-impl\target\time-service-impl-0.0.1.jar;F:\tp1-Amine7-long\tp-gl-master\timer-service-client\target\timer-service-client-0.0.1.jar;"/>
+    <property name="surefire.test.class.path" value="F:\tp1-Amine7-long\tp-gl-master\launcher\target\test-classes;F:\tp1-Amine7-long\tp-gl-master\launcher\target\classes;C:\Users\AMINE DADI\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\AMINE DADI\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;F:\tp1-Amine7-long\tp-gl-master\lookup-module\target\lookup-module-0.0.1.jar;F:\tp1-Amine7-long\tp-gl-master\timer-service\target\timer-service-0.0.1.jar;F:\tp1-Amine7-long\tp-gl-master\time-service-impl\target\time-service-impl-0.0.1.jar;F:\tp1-Amine7-long\tp-gl-master\timer-service-client\target\timer-service-client-0.0.1.jar;F:\tp1-Amine7-long\tp-gl-master\watch-gui\target\watch-gui-0.0.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\AMINE DADI"/>
     <property name="user.language" value="en"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\AMINE DADI\AppData\Local\Temp\surefire4219564851470548148\surefirebooter-20251204150432207_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\AMINE DADI\AppData\Local\Temp\surefire17411114739030210034\surefirebooter-20251210235635373_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="25+37-LTS-3491"/>
@@ -59,48 +59,48 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="testCreationHorloge" classname="org.emp.gl.core.launcher.AppTest" time="0.026">
+  <testcase name="testCreationHorloge" classname="org.emp.gl.core.launcher.AppTest" time="0.038">
     <system-out><![CDATA[📋 Annuaire Lookup initialisé
 ]]></system-out>
     <system-err><![CDATA[⚠️  Service non trouvé dans l'annuaire : TimerService
-⚠️  Horloge 'Test' : TimerService non disponible dans le Lookup!
+⚠️  Horloge 'Test' : TimerService non disponible!
 ]]></system-err>
   </testcase>
-  <testcase name="testCreationTimerService" classname="org.emp.gl.core.launcher.AppTest" time="0.001"/>
+  <testcase name="testCreationTimerService" classname="org.emp.gl.core.launcher.AppTest" time="0.0"/>
   <testcase name="shouldAnswerWithTrue" classname="org.emp.gl.core.launcher.AppTest" time="0.0"/>
-  <testcase name="testPlusieursHorloges" classname="org.emp.gl.core.launcher.AppTest" time="0.003">
-    <system-out><![CDATA[H1 affiche 15:04:32
-H2 affiche 15:04:32
-H3 affiche 15:04:32
+  <testcase name="testPlusieursHorloges" classname="org.emp.gl.core.launcher.AppTest" time="0.004">
+    <system-out><![CDATA[H1 affiche 00:00:00
+H2 affiche 00:00:00
+H3 affiche 00:00:00
 ]]></system-out>
     <system-err><![CDATA[⚠️  Service non trouvé dans l'annuaire : TimerService
-⚠️  Horloge 'H1' : TimerService non disponible dans le Lookup!
+⚠️  Horloge 'H1' : TimerService non disponible!
 ⚠️  Service non trouvé dans l'annuaire : TimerService
-⚠️  Horloge 'H2' : TimerService non disponible dans le Lookup!
+⚠️  Horloge 'H2' : TimerService non disponible!
 ⚠️  Service non trouvé dans l'annuaire : TimerService
-⚠️  Horloge 'H3' : TimerService non disponible dans le Lookup!
+⚠️  Horloge 'H3' : TimerService non disponible!
 ]]></system-err>
   </testcase>
-  <testcase name="testChangementService" classname="org.emp.gl.core.launcher.AppTest" time="0.003">
-    <system-out><![CDATA[Test affiche 15:04:32
+  <testcase name="testChangementService" classname="org.emp.gl.core.launcher.AppTest" time="0.004">
+    <system-out><![CDATA[Test affiche 00:00:00
 ]]></system-out>
     <system-err><![CDATA[⚠️  Service non trouvé dans l'annuaire : TimerService
-⚠️  Horloge 'Test' : TimerService non disponible dans le Lookup!
+⚠️  Horloge 'Test' : TimerService non disponible!
 ]]></system-err>
   </testcase>
   <testcase name="testTimerServiceGetters" classname="org.emp.gl.core.launcher.AppTest" time="0.0"/>
-  <testcase name="testAffichageSansService" classname="org.emp.gl.core.launcher.AppTest" time="0.002">
+  <testcase name="testAffichageSansService" classname="org.emp.gl.core.launcher.AppTest" time="0.005">
     <system-out><![CDATA[Test : Service de temps non disponible
 ]]></system-out>
     <system-err><![CDATA[⚠️  Service non trouvé dans l'annuaire : TimerService
-⚠️  Horloge 'Test' : TimerService non disponible dans le Lookup!
+⚠️  Horloge 'Test' : TimerService non disponible!
 ]]></system-err>
   </testcase>
-  <testcase name="testConnexionHorlogeService" classname="org.emp.gl.core.launcher.AppTest" time="0.002">
-    <system-out><![CDATA[Test affiche 15:04:32
+  <testcase name="testConnexionHorlogeService" classname="org.emp.gl.core.launcher.AppTest" time="0.007">
+    <system-out><![CDATA[Test affiche 00:00:00
 ]]></system-out>
     <system-err><![CDATA[⚠️  Service non trouvé dans l'annuaire : TimerService
-⚠️  Horloge 'Test' : TimerService non disponible dans le Lookup!
+⚠️  Horloge 'Test' : TimerService non disponible!
 ]]></system-err>
   </testcase>
 </testsuite>

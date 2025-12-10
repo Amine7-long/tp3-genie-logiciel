@@ -1,3 +1,4 @@
 org\emp\gl\clients\HorlogeGUI.class
 org\emp\gl\clients\CompteARebours.class
+org\emp\gl\clients\Chronometre.class
 org\emp\gl\clients\Horloge.class

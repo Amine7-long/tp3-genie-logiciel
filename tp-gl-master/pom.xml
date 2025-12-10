@@ -35,5 +35,7 @@
         <module>time-service-impl</module>
         <module>timer-service-client</module>
         <module>lookup-module</module>
+        <module>watch-gui</module>
+
     </modules>
 </project>

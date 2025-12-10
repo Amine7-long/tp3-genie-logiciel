@@ -10,8 +10,12 @@
         <module name="time-service-impl" />
         <module name="timer-service" />
         <module name="timer-service-client" />
+        <module name="watch-gui" />
         <module name="launcher" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="org.emp.gl.watch.states" target="24" />
+    </bytecodeTargetLevel>
   </component>
 </project>
